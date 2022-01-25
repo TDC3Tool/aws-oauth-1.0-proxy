@@ -105,7 +105,7 @@ describe("SignAndDelete", () => {
     });
   });
 
-  describe("is called", () => {
+  describe("JD Accept header is provided", () => {
     beforeEach(async () => {
       await underTest.doSignAndDelete(
         chance.string(),
@@ -114,7 +114,7 @@ describe("SignAndDelete", () => {
       );
     });
 
-    it("should have the JD Accept header", () => {
+    it("should create an OAuth with the Accept header", () => {
       expect(OAuth.OAuth).toBeCalledWith(
         undefined,
         undefined,
